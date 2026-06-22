@@ -1,4 +1,7 @@
 # Graph-Cut Segmentation: Usage Instructions
+This code was developed for my MSc thesis at Amirkabir University of Technology in 2017-2018.
+https://aut.ac.ir/cv/2094/HAMED-AZARNOUSH?slc_lang=en&&cv=2094&mod=scv
+Student No. 56
 
 ## Requirements
 
