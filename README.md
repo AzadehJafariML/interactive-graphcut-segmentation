@@ -14,9 +14,9 @@ MainFlow
 
 All major commands in the script include inline comments explaining their purpose. Please review these comments and the corresponding references for additional methodological details.
 
-2. In `main_process`, manually enter the input file name in **line 13**.
+2. In `MainFlow`, manually enter the input file name in **line 13**.
 
-3. Enter the desired slice number in **line 24**.
+3. Enter the desired slice number in **prompt line 24**.
 
 ## Preprocessing
 
@@ -28,7 +28,7 @@ In this script, the radius parameter of the `imopen` command can be adjusted to 
 imopen(..., strel('disk', 55))
 ```
 
-Depending on the image quality and slice characteristics, this value may need to be optimized manually.
+Depending on the image quality and slice characteristics, this value may need to be optimized manually for each dataset.
 
 ## Seed Selection
 
@@ -48,13 +48,13 @@ To draw seeds:
 5. Then select the background seeds in the same way.
 6. Press **Enter** again when finished.
 
-The selected seed points are saved into matrices and used to construct the probability distribution functions (PDFs) for the regional term in the graph-cut segmentation model.
+The selected seed points are saved into matrices and used to construct the probability distribution functions (PDFs) for the regional term in the graph-cut segmentation model (cost function).
 
 ## Parameter Tuning
 
-In the script `AlphaGraph`, the values of **lambda** and **gamma** must be determined experimentally for each slice to obtain the best segmentation result.
+In the script `AlphaGraph`, the values of **lambda** and **gamma** must be determined experimentally to obtain the best segmentation result.
 
-These parameters remain constant for the same anatomical slice across qMRI and cMRI images.
+These parameters remain constant for the whole data.
 
 ## Runtime
 
@@ -65,7 +65,7 @@ The segmentation process may take some time depending on the image size and para
 After the segmentation process is complete, run:
 
 ```matlab
-Segment_result
+Segment_Results
 ```
 
 This script displays the final segmentation output.
@@ -78,7 +78,7 @@ If the final segmentation contains leakage or unwanted segmented regions, run:
 Remove_leakage
 ```
 
-This script can be used to remove leakage artifacts from the final result.
+This script can be used to remove leakage artifacts from the final result. **Two examples** of leakage are porivded for better understanding the leakage issue
 
 ## Evaluation
 
